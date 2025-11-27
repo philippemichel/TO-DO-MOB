@@ -4,7 +4,7 @@ lot: false
 lof: false
 ---
 
-Il s'agit d'une étude effectuée selon la méthode \gls{sced}  de type ABAB (A1B1A2B2). L'étude porte sur des résidants en EHPAD répartis sur trois groupes selon leur degré de dépendance. 
+Il s'agit d'une étude effectuée selon la méthode \gls{sced}  de type `ABAB` (déroulé constant `A1B1A2B2`). L'étude porte sur des résidants en EHPAD répartis sur trois groupes selon leur degré de dépendance. 
 
 Dans ce document on différentie : 
 
@@ -15,13 +15,22 @@ Vu le très faible effectif rendu possible par la méthodologie il n'y aura aucu
 
 # Méthodes statistiques
 
-L’analyse des résultats s’effectuera au moyen d’une représentation visuelle et de l’indicateur statistique \gls{tau}.
+Dans un premier temps on recherchera une moindre cohérence des résultats dans la phase A pour chaque patient. Si une déviation importante est mise en évidence elle sera notée mais n’exclue pas le patient de l'étude.
 
-L’analyse visuelle est basée sur le niveau (médiane) ; la tendance observée au sein des phases ; la variabilité des données ; le chevauchement des points[@krato] & leur tendance[@lee18]. Sa valeur, comprise entre [-1 ; 1], spécifie le degré de corrélation entre les variables de phases distinctes et permet de caractériser la taille de l’effet du traitement (\gls{tau}).
+L’analyse des résultats s’effectuera au moyen d’une représentation visuelle de la tendance[@lee18] observée au sein des phases, cas par cas, représentée avec un marqueur de dispersion : \gls{mad}[@mad24].
 
-Les calculs seront effectués principalement à l'aide du package `SCED`[@sced].
+L'analyse numérique présentera pour chaque cas:
 
- 
+- La dispertion des mesures par phase (\gls{mad}).
+- La tendance observée au sein des phases
+- L'effet de taille \gls{tau} évalué par deux méthodes (les intervalles de confiance seront calculés par bootstrap) : 
+    - **A de Ruscio** qui permet de mesurer la probabilité qu'une observation prise au hasard dans la phase B soit supérieure à une observation prise au hasard dans la phase A. La valeur varie entre 0 et 1, une valeur de 0,5 indiquant l'absence d'effet du traitement (pas de diféfrenc eentre les phases A & B).Un résultat > 0.7 ou< 0.3 montre un effet important. 
+    - **G de Hegde**. Un résultat supérieur à 0,8 est considéré comme grand,& *énorme* autoir de 2. Une représentation graphique sera présentée.
+
+Le G de Hedge global pour l'ensemble de l'échantillon sera calculé & présenté dans le graphique présnté au dessus. 
+
+Les calculs seront effectués principalement à l'aide des packages `SCED`[@sced] & `metafor`[@metafor].
+
 
 ## Justification statistique du nombre de sujets
 
@@ -33,7 +42,7 @@ Aucune méthode d’imputation des données manquantes n’est prévue. L’anal
 
 ## Sujets pris en compte dans l’analyse statistique
 
-Seront pris en compte tous les résidents inclus qui n’ont pas retiré leur consentement à l’analyse de leurs données & qui ont les 4 périodes d’évaluation (A1B1A2B2) avec au moins 3 points d’évaluation par phase pour le critère principal et un minimum de 18 points d’évaluation. 
+Seront pris en compte tous les résidents inclus qui n’ont pas retiré leur consentement à l’analyse de leurs données & qui ont les 4 périodes d’évaluation (`A1B1A2B2`) avec au moins 3 points d’évaluation par phase pour le critère principal et un minimum de 18 points d’évaluation. 
 
 
 # Technique {.unnumbered}
@@ -46,7 +55,7 @@ Un dépôt GitHub sera utilisé qui ne comprendra que le code & non les données
 
 \printglossaries
 
-Bibliographie {.unnumbered}
 
 
-\printbibliography
+
+

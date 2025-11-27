@@ -1,3 +1,4 @@
+    \usepackage{babel}
     \definecolor{novo}{HTML}{27484b}
     \usepackage[locale = FR,
                 per-mode = symbol,
@@ -6,17 +7,9 @@
     \usepackage[section]{placeins}
     \usepackage{arsenal}
     %
-
-
     \usepackage{tcolorbox}
     %
-    \usepackage[nonumberlist,
-                automake,
-                style=treegroup]{glossaries-extra}
-    \usepackage{glossaries-babel}
-    \setabbreviationstyle{long-short-sc}
-    \loadglsentries{listacro}
-    \makeglossaries
+
     %
     %
     \newcommand{\doc}{D\textsuperscript{r} }
@@ -32,8 +25,13 @@
 \usepackage{biblatex}
 \addbibresource{stat.bib}
 
-   \usepackage{hyperref}
-\hypersetup{
-pdfinfo={
-Title={TO DO MOB},
-author={Philippe MICHEL}}}
+\usepackage{hyperref}
+
+    \usepackage[nonumberlist,
+                automake,
+                style=treegroup]{glossaries-extra}
+    \usepackage{glossaries-babel}
+    \setabbreviationstyle{long-short-sc}
+    \loadglsentries{listacro}
+    \makeglossaries
+

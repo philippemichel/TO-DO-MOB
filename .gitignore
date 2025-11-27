@@ -40,9 +40,9 @@ QTDublinIrish.otf
 _extensions
 doc
 generique.tex
-plan_analyse.glg
-plan_analyse.glo
-plan_analyse.gls
-plan_analyse.ist
-plan_analyse.pdf
-plan_analyse.tex
+*.glg
+*.glo
+*.gls
+*.ist
+*.pdf
+test*
