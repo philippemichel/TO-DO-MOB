@@ -1,0 +1,52 @@
+---
+subtitle: "Plan d'analyse statistique -- V 1.0"
+lot: false
+lof: false
+---
+
+Il s'agit d'une étude effectuée selon la méthode \gls{sced}  de type ABAB (A1B1A2B2). L'étude porte sur des résidants en EHPAD répartis sur trois groupes selon leur degré de dépendance. 
+
+Dans ce document on différentie : 
+
+- **La phase** : selon le type d'intervention à savoir phase A : période de baseline (toilette selon les techniques habituelles) & phase B : période d’intervention (toilette adaptée).
+- **La période** temps durant laquelle une phase est en cours soit quatre périodes par cas etc.).
+
+Vu le très faible effectif rendu possible par la méthodologie il n'y aura aucun calcul statistique habituel (test de signification, IC, p-value\dots).
+
+# Méthodes statistiques
+
+L’analyse des résultats s’effectuera au moyen d’une représentation visuelle et de l’indicateur statistique \gls{tau}.
+
+L’analyse visuelle est basée sur le niveau (médiane) ; la tendance observée au sein des phases ; la variabilité des données ; le chevauchement des points[@krato] & leur tendance[@lee18]. Sa valeur, comprise entre [-1 ; 1], spécifie le degré de corrélation entre les variables de phases distinctes et permet de caractériser la taille de l’effet du traitement (\gls{tau}).
+
+Les calculs seront effectués principalement à l'aide du package `SCED`[@sced].
+
+ 
+
+## Justification statistique du nombre de sujets
+
+Il n’y a pas de calcul d’effectif dans un essai \gls{sced}. Il est important d’avoir un nombre de transitions (passage d’une phase à une autre) supérieur ou égale à 3 et un minimum de 5 répétitions de mesures dans chaque phase.  Il faut inclure 3 sujets minimum. 9 résidents seront inclus (3 par types de profil de cas). Afin d’anticiper de possibles sujets non évaluables, il est prévu d’inclure jusqu’à 12 résidents. Le recrutement s’arrêtera dès l’obtention de 9 résidents analysables.
+
+## Méthode de prise en compte des données manquantes ou non valides
+
+Aucune méthode d’imputation des données manquantes n’est prévue. L’analyse sera réalisée à partir des données recueillies. Le nombre et le pourcentage de données manquantes sera notamment décrit par variable, par phase et par résident.  
+
+## Sujets pris en compte dans l’analyse statistique
+
+Seront pris en compte tous les résidents inclus qui n’ont pas retiré leur consentement à l’analyse de leurs données & qui ont les 4 périodes d’évaluation (A1B1A2B2) avec au moins 3 points d’évaluation par phase pour le critère principal et un minimum de 18 points d’évaluation. 
+
+
+# Technique {.unnumbered}
+
+L'analyse statistique sera réalisée avec le logiciel **R**[@rstat] & divers packages. Outre ceux cités dans le texte ou utilisera en particulier `tidyverse` [@tidy] & `baseph` [@baseph].
+
+Un dépôt GitHub sera utilisé qui ne comprendra que le code & non les données ou résultats. Au besoin un faux tableau de données sera présenté pour permettre des tests.
+
+<https://github.com/philippemichel/TODOMOB>
+
+\printglossaries
+
+Bibliographie {.unnumbered}
+
+
+\printbibliography
