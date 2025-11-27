@@ -1,2 +1,2 @@
 # TO-DO-MOB
-Étude monocentrique utilisant un design SCED (Single Case Experimental Design)  type ABAB
+Étude monocentrique utilisant un design SCED (Single Case Experimental Design) selon un schéma d'introduction/retrait : ABAB
