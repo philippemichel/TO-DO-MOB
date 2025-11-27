@@ -1,5 +1,6 @@
 ---
 subtitle: "Plan d'analyse statistique -- V 1.0"
+toc: false
 lot: false
 lof: false
 ---
@@ -8,7 +9,7 @@ Il s'agit d'une étude effectuée selon la méthode \gls{sced}  de type `ABAB` (
 
 Dans ce document on différentie : 
 
-- **La phase** : selon le type d'intervention à savoir phase A : période de baseline (toilette selon les techniques habituelles) & phase B : période d’intervention (toilette adaptée).
+- **La phase** : selon le type d'intervention à savoir `phase A` : période de baseline (toilette selon les techniques habituelles) & `phase B` : période d’intervention (toilette adaptée).
 - **La période** temps durant laquelle une phase est en cours soit quatre périodes par cas etc.).
 
 Vu le très faible effectif rendu possible par la méthodologie il n'y aura aucun calcul statistique habituel (test de signification, IC, p-value\dots).

@@ -1,0 +1,68 @@
+---
+subtitle: "brouillon"
+format: html
+---
+
+
+```{r}
+#| label: setup
+
+rm(list = ls())
+#
+library(tidyverse)
+library(baseph)
+library(SCED)
+library(metafor)
+library(kableExtra)
+library(gtsummary)
+#
+tt <- tt <- simulated_data
+ttr <- sced_analysis(data = tt)
+```
+
+```{r}
+#| label: macro_ci
+
+affci <- function(df, md,inf,sup) {
+zz <-   df |> 
+    dplyr::mutate(
+      ci = paste0(round({{md}},2)," [", round({{inf}}, 2), "; ", round({{sup}}, 2), "]"))
+return(zz$ci)
+}
+```
+
+
+
+# Déviations en période A
+
+```{r}
+#| label: tb-deva
+#| tbl-cap: Déviations en période A
+
+ttr |> 
+  dplyr::select(Participant, deviation_A) |> 
+  kbl() |>
+  kable_styling(bootstrap_options = c("striped", "hover",  full_width = F))
+```
+
+# Effet de taille
+
+```{r}
+particpant <- ttr$Participant
+ruscio <- affci(ttr,ruscios_A,ruscios_A_ci_lwr, ruscios_A_ci_upr)
+hedgesg <- affci(ttr,hedges_g,hedges_g_ci_lwr, hedges_g_ci_upr)
+pp <- ttr$p
+tibble(
+  Participant = particpant,
+  p_value = pp,
+  Ruscio = ruscio,
+  Hedges = hedgesg
+) |> 
+    kbl() |>
+  kable_styling(bootstrap_options = c("striped", "hover",  full_width = F))
+```
+
+
+
+
+

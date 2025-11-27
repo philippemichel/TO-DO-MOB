@@ -41,7 +41,7 @@ papersize: a4
 editor: source
 cite-method: biblatex
 #bibliography: stat.bib
-csl: jama.csl
+#csl: jama.csl
 #reference-location: margin
 #citation-location: margin
 license: "MIT"
